@@ -28,8 +28,7 @@ export async function POST(req) {
                     secure: true,
                 };
                 cookies().set(options);
-                const test = cookies()?.get('session')
-                return NextResponse.json({ isLogged: true, message: 'Session created', test }, { status: 200 });
+                return NextResponse.json({ isLogged: true, message: 'Session created' }, { status: 200 });
             }
         }
     } catch (err) {
