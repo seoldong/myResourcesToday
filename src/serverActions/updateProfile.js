@@ -16,10 +16,6 @@ export default async function updateProfile(formData) {
         const displayName = await formData.get('displayName')
         const profileImgFile = await formData.get('profileImg')
         //
-        console.log('animationView : ', animationView);
-        console.log('displayName : ', displayName);
-        console.log('profileImgFile : ', profileImgFile);
-        //
         const logStatus = await checkLoginStatus();
         const uid = logStatus.userCred.uid;
         const docListWord = uid.slice(0, 2);
