@@ -2,10 +2,12 @@
 import { auth } from "@/lib/firebase-config";
 import { invalidateSession } from "@/logic-c/apiRoute";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useRouter } from 'next/router';
 //---------------------------------------------------
 import { useState, useEffect } from "react";
 //---------------------------------------------------
 export default function TimerNonLogin({ logStatus }) {
+  const router = useRouter();
   //
   const initTime = { hours: 0, minutes: 0, seconds: 0 };
   const [timeLeft, setTimeLeft] = useState(initTime);
@@ -33,7 +35,7 @@ export default function TimerNonLogin({ logStatus }) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [router]);
   //
   function formatNumber(num) {
     return num.toString().padStart(2, "0");

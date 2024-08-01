@@ -2,7 +2,6 @@ import { checkLoginStatus } from "@/logic-s/loginStat";
 import NavBtnNonLogin from "@/components/NavBtnNonLogin";
 import NavLoginLeftMenu from "@/components/NavLoginLeftMenu";
 import NavLoginRightMenu from "./NavLoginRightMenu";
-import { customInitApp } from "@/lib/firebase-admin-config";
 //
 export default async function NavMenu() {
 
