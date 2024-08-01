@@ -1,0 +1,605 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --userStateBtnoreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+@layer utilities {
+  .custom-scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #373737;
+    border-radius: 10px;
+    /* 트랙의 모서리를 둥글게 설정 */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: #858585;
+    border-radius: 10px;
+    /* thumb의 모서리를 둥글게 설정 */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+  }
+}
+
+.dropdown-left {
+  animation: slideDownLeft 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDownLeft {
+  from {
+    opacity: 0;
+    top: 0%;
+  }
+
+  to {
+    opacity: 1;
+    top: 100%;
+  }
+}
+
+.dropdown-right {
+  animation: slideDownRight 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDownRight {
+  from {
+    opacity: 0;
+    top: 10%;
+  }
+
+  to {
+    opacity: 1;
+    top: 80%;
+  }
+}
+
+/* 스크롤바 전체 */
+::-webkit-scrollbar {
+  width: 8px;
+  /* 세로 스크롤바 너비 */
+  height: 8px;
+  /* 가로 스크롤바 너비 */
+}
+
+/* 스크롤바 트랙 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* 드래그 가능한 부분 (스크롤 핸들) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* 드래그 가능한 부분 (스크롤 핸들) 마우스 오버 시 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 화살표 삭제 */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+html[data-theme='dark'] {
+  background-color: black;
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dark'] section {
+  background-color: rgb(31 41 55);
+}
+
+html[data-theme='dark'] div {
+  background-color: rgb(31 41 55);
+}
+
+/* html[data-theme='dark'] a {
+  background-color: rgb(17 24 39);
+  color: rgb(209 213 219);
+} */
+
+html[data-theme='dark'] li {
+  background-color: rgb(17 24 39);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dark'] li:hover {
+  background-color: rgb(156 163 175);
+  color: rgb(17 24 39)
+}
+
+/*  */
+
+html[data-theme='dark'] button {
+  background-color: rgb(31 41 55);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dark'] button:hover {
+  background-color: rgb(31 41 55);
+  color: rgb(17 24 39)
+}
+
+/*  */
+
+html[data-theme='dark'] input,
+html[data-theme='dark'] textarea {
+  background-color: rgb(156 163 175);
+  color: rgb(75 85 99);
+}
+
+/*  */
+html[data-theme='dark'] .userStateForm,
+html[data-theme='dark'] .userStateBtn {
+  background-color: rgb(17 24 39);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dark'] .userStateBtn:hover {
+  background-color: rgb(17 24 39);
+  color: rgb(75 85 99);
+}
+
+html[data-theme='dark'] .userStateBtnText:hover {
+  background-color: rgb(17 24 39);
+  /* color: rgb(209 213 219); */
+}
+
+/*  */
+
+html[data-theme='dark'] select {
+  background-color: rgb(75 85 99);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dark'] option {
+  background-color: rgb(75 85 99);
+  color: rgb(209 213 219);
+}
+
+/*  */
+
+html[data-theme='dark'] .dropdown-left {
+  background-color: rgb(17 24 39);
+}
+
+html[data-theme='dark'] .dropDownLi {
+  background-color: rgb(17 24 39);
+}
+
+html[data-theme='dark'] .dropDownLi:hover {
+  background-color: rgb(17 24 39);
+}
+
+/*  */
+
+html[data-theme='dark'] form {
+  background-color: rgb(31 41 55);
+}
+
+html[data-theme='dark'] label {
+  background-color: rgb(31 41 55);
+}
+
+html[data-theme='dark'] label:hover {
+  background-color: rgb(31 41 55);
+  color: rgb(17 24 39);
+}
+
+html[data-theme='dark'] .profileImg {
+  background-color: rgb(31 41 55);
+}
+
+/* animation view ----- leavingWork*/
+
+html[data-theme='leavingWork'] body {
+  background-color: rgb(57, 118, 147);
+}
+
+html[data-theme='leavingWork'] section {
+  background-image: url('/13-16.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='leavingWork'] nav {
+  background-color: rgba(219, 243, 255, 0.745);
+}
+
+html[data-theme='leavingWork'] .time {
+  background-color: rgba(219, 243, 255, 0.301);
+}
+
+html[data-theme='leavingWork'] .timeList {
+  background-color: rgba(219, 243, 255, 0.745);
+}
+
+html[data-theme='leavingWork'] label {
+  background-color: rgba(219, 243, 255, 0.745);
+}
+
+html[data-theme='leavingWork'] p {
+  color: rgba(219, 243, 255, 0.745);
+}
+
+html[data-theme='leavingWork'] button:hover {
+  color: rgb(209 213 219);
+  ;
+  background-color: rgba(156, 109, 0, 0);
+}
+
+/* animation view ----- evening*/
+
+html[data-theme='evening'] body {
+  background-color: rgb(215, 147, 57);
+}
+
+html[data-theme='evening'] section {
+  background-image: url('/17-19.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='evening'] nav {
+  background-color: rgb(239, 173, 86);
+}
+
+html[data-theme='evening'] .time {
+  background-color: rgba(255, 224, 183, 0.593);
+}
+
+html[data-theme='evening'] .timeList {
+  background-color: rgba(255, 224, 183, 0.593);
+}
+
+html[data-theme='evening'] label {
+  background-color: rgba(255, 224, 183, 0.593);
+}
+
+html[data-theme='evening'] p {
+  color: rgba(255, 224, 183, 0.593);
+}
+
+html[data-theme='evening'] button {
+  color: rgb(31 41 55);
+}
+
+html[data-theme='evening'] button:hover {
+  color: rgb(209 213 219);
+  ;
+}
+
+html[data-theme='evening'] .scheduleControlBtn {
+  color: rgb(31 41 55);
+  background-color: rgba(255, 224, 183, 0.593);
+}
+
+html[data-theme='evening'] .scheduleControlBtn:hover {
+  color: rgb(209 213 219);
+}
+
+/* animation view ----- nighttime*/
+
+html[data-theme='nighttime'] body {
+  background-color: rgb(0, 35, 66);
+  color: rgb(229, 235, 241);
+}
+
+html[data-theme='nighttime'] section {
+  background-image: url('/20-23.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='nighttime'] nav {
+  background-color: rgb(0, 66, 124);
+}
+
+html[data-theme='nighttime'] .time {
+  background-color: rgba(0, 66, 124, 0.394);
+}
+
+html[data-theme='nighttime'] .timeList {
+  background-color: rgba(0, 66, 124, 0.394);
+}
+
+html[data-theme='nighttime'] .timeList:hover {
+  background-color: rgba(0, 66, 124);
+}
+
+html[data-theme='nighttime'] label {
+  background-color: rgba(0, 66, 124, 0.394);
+}
+
+html[data-theme='nighttime'] p {
+  color: rgba(0, 66, 124, 0.394);
+}
+
+html[data-theme='nighttime'] button {
+  color: rgb(229, 235, 241);
+}
+
+html[data-theme='nighttime'] button:hover {
+  color: rgb(191, 198, 0);
+}
+
+html[data-theme='nighttime'] .scheduleControlBtn {
+  color: rgb(229, 235, 241);
+  background-color: rgba(0, 66, 124, 0.394);
+}
+
+html[data-theme='nighttime'] .scheduleControlBtn:hover {
+  color: rgb(191, 198, 0);
+  background-color: rgb(0, 66, 124);
+}
+
+html[data-theme='nighttime'] .dropdown-left {
+  color: rgb(229, 235, 241);
+  background-color: rgba(0, 66, 124);
+}
+
+html[data-theme='nighttime'] .userStateForm,
+html[data-theme='nighttime'] .userStateBtn {
+  background-color: rgba(0, 66, 124);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='nighttime'] select {
+  color: rgb(229, 235, 241);
+  background-color: rgb(158, 182, 202);
+}
+
+/* animation view ----- dawn*/
+
+html[data-theme='dawn'] body {
+  background-color: rgb(33, 0, 98);
+  color: rgb(229, 235, 241);
+}
+
+html[data-theme='dawn'] section {
+  background-image: url('/00-05.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='dawn'] nav {
+  background-color: rgb(47, 0, 167);
+}
+
+html[data-theme='dawn'] .time {
+  background-color: rgba(47, 0, 167, 0.315);
+}
+
+html[data-theme='dawn'] .timeList {
+  background-color: rgba(52, 4, 173, 0.498);
+}
+
+html[data-theme='dawn'] .timeList:hover {
+  background-color: rgb(47, 0, 167);
+}
+
+html[data-theme='dawn'] label {
+  background-color: rgba(47, 0, 167, 0.315);
+}
+
+html[data-theme='dawn'] p {
+  color: rgba(47, 0, 167, 0.315);
+}
+
+html[data-theme='dawn'] button {
+  color: rgb(229, 235, 241);
+}
+
+html[data-theme='dawn'] button:hover {
+  color: rgb(0, 180, 18);
+}
+
+html[data-theme='dawn'] .scheduleControlBtn {
+  color: rgb(229, 235, 241);
+  background-color: rgba(47, 0, 167, 0.5);
+}
+
+html[data-theme='dawn'] .scheduleControlBtn:hover {
+  background-color: rgb(47, 0, 167);
+}
+
+html[data-theme='dawn'] .dropdown-left {
+  /* color: rgb(229, 235, 241); */
+  background-color: rgb(47, 0, 167);
+}
+
+html[data-theme='dawn'] .userStateForm,
+html[data-theme='dawn'] .userStateBtn {
+  background-color: rgb(47, 0, 167);
+  color: rgb(209 213 219);
+}
+
+html[data-theme='dawn'] select {
+  color: rgb(229, 235, 241);
+  background-color: rgb(158, 182, 202);
+}
+
+/* animation view ----- morning*/
+
+html[data-theme='morning'] body {
+  background-color: rgb(219, 248, 255);
+  color: rgb(0, 47, 93);
+}
+
+html[data-theme='morning'] section {
+  background-image: url('/06-09.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='morning'] nav {
+  background-color: rgb(219, 248, 255);
+}
+
+html[data-theme='morning'] .time {
+  background-color: rgba(219, 248, 255, 0.338);
+}
+
+html[data-theme='morning'] .timeList {
+  background-color: rgba(219, 248, 255, 0.731);
+}
+
+html[data-theme='morning'] .timeList:hover {
+  background-color: rgb(219, 248, 255);
+}
+
+html[data-theme='morning'] label {
+  background-color: rgba(219, 248, 255, 0.498);
+}
+
+/* html[data-theme='morning'] p {
+  color: rgba(47, 0, 167, 0.315);
+} */
+
+/* html[data-theme='morning'] button {
+  color: rgb(229, 235, 241);
+} */
+
+/* html[data-theme='morning'] button:hover {
+  color: rgb(0, 180, 18);
+} */
+
+html[data-theme='morning'] .scheduleControlBtn {
+  color: rgb(0, 0, 0);
+  background-color: rgba(219, 248, 255, 0.498);
+}
+
+html[data-theme='morning'] .scheduleControlBtn:hover {
+  background-color: rgb(219, 248, 255);
+}
+
+html[data-theme='morning'] .dropdown-left {
+  /* color: rgb(229, 235, 241); */
+  background-color: rgb(219, 248, 255);
+}
+
+html[data-theme='morning'] .userStateForm,
+html[data-theme='morning'] .userStateBtn {
+  background-color: rgb(219, 248, 255);
+  color: rgb(0, 0, 0);
+}
+
+html[data-theme='morning'] select {
+  color: rgb(0, 0, 0);
+}
+
+html[data-theme='morning'] .dropDownLi:hover {
+  color: rgb(0, 180, 18);
+}
+
+/* animation view ----- dayTime*/
+
+html[data-theme='dayTime'] body {
+  background-color: rgb(173, 255, 251);
+  color: rgb(0, 47, 93);
+}
+
+html[data-theme='dayTime'] section {
+  background-image: url('/09-12.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html[data-theme='dayTime'] nav {
+  background-color: rgb(173, 255, 251);
+}
+
+html[data-theme='dayTime'] .time {
+  background-color: rgba(225, 255, 254, 0.5);
+}
+
+html[data-theme='dayTime'] .timeList {
+  background-color: rgba(225, 255, 254, 0.7);
+}
+
+html[data-theme='dayTime'] .timeList:hover {
+  background-color: rgba(225, 255, 254);
+}
+
+html[data-theme='dayTime'] label {
+  background-color: rgba(225, 255, 254, 0.7);
+}
+
+/* html[data-theme='dayTime'] p {
+  color: rgba(47, 0, 167, 0.315);
+} */
+
+/* html[data-theme='dayTime'] button {
+  color: rgb(229, 235, 241);
+} */
+
+/* html[data-theme='dayTime'] button:hover {
+  color: rgb(0, 180, 18);
+} */
+
+html[data-theme='dayTime'] .scheduleControlBtn {
+  color: rgb(0, 0, 0);
+  background-color: rgba(225, 255, 254, 0.7);
+}
+
+html[data-theme='dayTime'] .scheduleControlBtn:hover {
+  background-color: rgba(225, 255, 254);
+}
+
+html[data-theme='dayTime'] .dropdown-left {
+  /* color: rgb(229, 235, 241); */
+  background-color: rgba(225, 255, 254);
+}
+
+html[data-theme='dayTime'] .userStateForm,
+html[data-theme='dayTime'] .userStateBtn {
+  background-color: rgba(225, 255, 254);
+  color: rgb(0, 0, 0);
+}
+
+html[data-theme='dayTime'] select {
+  color: rgb(0, 0, 0);
+}
