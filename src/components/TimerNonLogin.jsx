@@ -2,7 +2,7 @@
 import { auth } from "@/lib/firebase-config";
 import { invalidateSession } from "@/logic-c/apiRoute";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 //---------------------------------------------------
 import { useState, useEffect } from "react";
 //---------------------------------------------------
@@ -27,6 +27,7 @@ export default function TimerNonLogin({ logStatus }) {
     return () => checkLogin();
   }, [logStatus]);
 
+  //
   useEffect(() => {
     setTimeLeft(calculateTimeLeft());
 
@@ -36,6 +37,7 @@ export default function TimerNonLogin({ logStatus }) {
 
     return () => clearInterval(timer);
   }, [router]);
+  
   //
   function formatNumber(num) {
     return num.toString().padStart(2, "0");
