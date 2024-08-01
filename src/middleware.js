@@ -19,5 +19,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/', '/membership/:path*']
+  matcher: ['/membership/:path*']
 };

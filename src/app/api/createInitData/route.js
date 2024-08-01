@@ -114,8 +114,6 @@ export async function POST(req, res) {
         }
         initScheduleData();
         //
-
-        console.log('init data =========================');
     }
     catch (err) {
         console.log("Err : api/create init data", err);

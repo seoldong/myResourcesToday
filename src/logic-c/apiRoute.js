@@ -1,4 +1,6 @@
 'use client'
+
+import { useRouter } from 'next/navigation';
 //
 export async function createSession(userData) {
     if (!userData) return;
@@ -13,11 +15,12 @@ export async function createSession(userData) {
 
     const response = await fetch(url, options)
     if (response.status === 200) {
-        console.log("api create session : ", await response.json());
+        // console.log("api create session : ", await response.json());
     }
 }
 //
 export async function invalidateSession() {
+
     const url = `/api/invalidateSession`;
     const options = { method: "POST" };
     const response = await fetch(url, options);
