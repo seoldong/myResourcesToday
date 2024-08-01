@@ -3,10 +3,8 @@ import NavBtnNonLogin from "@/components/NavBtnNonLogin";
 import NavLoginLeftMenu from "@/components/NavLoginLeftMenu";
 import NavLoginRightMenu from "./NavLoginRightMenu";
 import { customInitApp } from "@/lib/firebase-admin-config";
-import { cookies } from "next/headers";
 //
 export default async function NavMenu() {
-  customInitApp();
 
   const logStatus = await checkLoginStatus();
 

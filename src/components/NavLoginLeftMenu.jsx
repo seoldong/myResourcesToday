@@ -3,10 +3,13 @@
 import Link from "next/link";
 import NavBtnLogout from "./NavBtnLogout";
 import { useEffect, useRef, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 export default function NavLoginLeftMenu() {
-  const [dropDown, setDropDown] = useState(false);
+  const router = useRouter();
   const dropdownRef = useRef(null);
+  const [dropDown, setDropDown] = useState(false);
 
   const onClickDropDown = () => {
     setDropDown(!dropDown);

@@ -29,16 +29,6 @@ export async function invalidateSession() {
     }
 }
 //
-export async function createInitData() {
-    const url = `/api/createInitData`;
-    const options = { method: "POST" };
-    const response = await fetch(url, options);
-    if (response.status === 200) {
-        console.log("api create init data", await response.json());
-    }
-}
-//
-//
 export async function fetchNavProfile(idToken) {
     const url = `/api/fetchNavProfile`;
     const options = {
